@@ -15,7 +15,8 @@
     "grunt-contrib-uglify": "^3.0.1",
     "gulp": "^3.9.1",
     "gulp-jshint": "^2.0.4",
-    "gulp-uglify": "^3.0.0"
+    "gulp-uglify": "^3.0.0",
+    "requirejs": "^2.3.5"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

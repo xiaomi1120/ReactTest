@@ -1,1 +1,0 @@
-var a="Tom",b="My name is";console.log(b+a);
