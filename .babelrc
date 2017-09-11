@@ -1,0 +1,7 @@
+//.babelrc
+{
+    // 此项指明，转码的规则
+   "presets":['es2015'],
+    // 下面这个选项是引用插件来处理代码的转换
+   "plugins":['babel-plugin-transform-object-rest-spread']
+}

@@ -1,0 +1,1 @@
+function listRow(list,idx,tpl,row){$(list).append(Mustache.render(tpl,{idx:idx,delBtn:true,row:row}));$("#productionDate"+idx).each(function(){$(this).text(getFormatDateByLong($(this).text()))});$("#expireDate"+idx).each(function(){$(this).text(getFormatDateByLong($(this).text()))});$("#spec"+idx).each(function(){$(this).html($(this).text())})}
