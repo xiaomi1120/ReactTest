@@ -155,11 +155,48 @@ webpack ./index.js bundle.js
 	console.log(text)
 
 /***/ },
-/* 1 */
+/* 1 *///hello.js的模板工厂方法
 /***/ function(module, exports) {
 
 	module.exports='Hello world!'
 
 /***/ }
 /******/ ]);
+```
+** 使用loader
+> loader是作用于应用中资源文件的转换行为。它们是函数（运行在Node.js环境中），接收资源文件的源代码作为参数，并返回新的代码。
+```bash
+npm install style-loader css-loader --save-dev
+```
+* 创建一个简单的css文件index.css
+```bash
+div{
+    width: 100px;
+    height: 100px;
+    background-color: red
+}
+```
+* 我们在入口文件index.js中通过require方法引入index.css
+```bash
+require('style!css!./index.css');
+document.body.appendChild(document.createElement('div'));
+```
+> 注意这里的style!css!，类似xxx!这样的写法是为了指定特定的loader.这里是告诉webpack使用style-loader及css-loader对index.css的内容进行处理。
+* 页面创建元素以验证index.css中编写的样式是否生效
+```bash
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+     <script src="./bundle.js"></script>
+    </body>
+</html>
+```
+* 然后同样执行一下命令
+```bash
+webpack ./index.js bundle.js
 ```
