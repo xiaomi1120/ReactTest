@@ -163,7 +163,7 @@ webpack ./index.js bundle.js
 /***/ }
 /******/ ]);
 ```
-** 使用loader
+## 使用loader
 > loader是作用于应用中资源文件的转换行为。它们是函数（运行在Node.js环境中），接收资源文件的源代码作为参数，并返回新的代码。
 ```bash
 npm install style-loader css-loader --save-dev
