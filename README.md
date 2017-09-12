@@ -201,3 +201,41 @@ document.body.appendChild(document.createElement('div'));
 ```bash
 webpack ./index.js bundle.js
 ``` 
+## 使用配置文件
+> 下边编写一个配置文件
+* entry项目的入口文件
+* output构建的输出结果描述：
+  
+  - path：输出目录
+  - filename: 输出文件名
+  - publicPath:输出目录所对应的外部路径（从浏览器中访问）
+  > 以下为我们的配置文件
+```bash
+var path=require('path');
+module.exports={
+    // configuration
+    entry:path.join(__dirname,'index'),//项目的入口文件
+    output:{//输出结果描述
+        path:__dirname,//输出目录
+        filename:'bundle.js'//输出文件名
+    },
+    module:{
+        loaders:[
+            {
+                test:/\.css$/,
+                loaders:['style','css']//是对于模块中的loader使用的配置
+            }
+        ]
+    }
+}
+
+  ```
+  > 这样样式只需要像依赖JavaScript模块一样写成：
+  ```bash
+  require('./index.css');
+  document.body.appendChild(document.createElement('div'));
+  ```
+  > 这样命令行直接执行以下命令即可
+  ```bash
+  webpack
+  ```
