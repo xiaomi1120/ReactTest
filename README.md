@@ -184,6 +184,7 @@ document.body.appendChild(document.createElement('div'));
 > 注意这里的style!css!，类似xxx!这样的写法是为了指定特定的loader.这里是告诉webpack使用style-loader及css-loader对index.css的内容进行处理。
 * 页面创建元素以验证index.css中编写的样式是否生效
 ```bash
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
